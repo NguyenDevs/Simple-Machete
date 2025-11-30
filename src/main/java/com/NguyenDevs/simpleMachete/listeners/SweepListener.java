@@ -81,6 +81,11 @@ public class SweepListener implements Listener {
             return;
         }
 
+        // Check if player is targeting an entity - DON'T break blocks if attacking mobs
+        if (isTargetingEntity(player)) {
+            return; // Skip block breaking when attacking entities
+        }
+
         // Add cooldown
         cooldowns.add(player.getUniqueId());
 
@@ -97,6 +102,26 @@ public class SweepListener implements Listener {
 
         // Perform sweep
         performSweep(player, item);
+    }
+
+    /**
+     * Check if player is targeting an entity (mob, player, etc.)
+     * @param player The player to check
+     * @return true if targeting an entity, false otherwise
+     */
+    private boolean isTargetingEntity(Player player) {
+        // Raycast to detect if looking at an entity
+        double maxDistance = 5.0; // Sword attack range (can be configured)
+
+        RayTraceResult result = player.getWorld().rayTraceEntities(
+                player.getEyeLocation(),
+                player.getEyeLocation().getDirection(),
+                maxDistance,
+                0.5, // Entity bounding box expansion
+                entity -> entity != player && entity instanceof org.bukkit.entity.LivingEntity
+        );
+
+        return result != null && result.getHitEntity() != null;
     }
 
     private void performSweep(Player player, ItemStack sword) {
