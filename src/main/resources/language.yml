@@ -1,0 +1,9 @@
+# SimpleMachete Language File
+# You can customize all messages here
+# Use & for color codes
+
+prefix: "&8[&6SimpleMachete&8] &r"
+reload-success: "&aPlugin reloaded successfully!"
+no-permission: "&cYou don't have permission to use this command!"
+player-only: "&cThis command can only be used by players!"
+usage: "&cUsage: /simplemachete reload"

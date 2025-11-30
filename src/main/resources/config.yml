@@ -1,0 +1,97 @@
+# SimpleMachete Configuration File
+# Plugin by NguyenDevs
+
+settings:
+  # Radius of blocks to break (in blocks)
+  radius: 5
+
+  # Require Sweeping Edge enchantment on sword
+  require-sweeping-edge: true
+
+  # Cooldown between sweeps (in ticks, 20 ticks = 1 second)
+  cooldown-ticks: 10
+
+  # Durability damage per sweep (default: 1)
+  # Note: Unbreaking enchantment still applies
+  durability-damage: 1
+
+  # Enable durability damage on sweep
+  enable-durability-damage: true
+
+  # Wave speed - how fast blocks disappear layer by layer (in ticks)
+  # Lower = faster wave (1 tick = 0.05 seconds)
+  # Recommended: 1-2 ticks
+  wave-speed-ticks: 1
+
+  # List of worlds where the plugin is enabled
+  enable-world:
+    - world
+    - world_nether
+    - world_the_end
+
+# List of allowed swords that can use machete feature
+allowed-swords:
+  - WOODEN_SWORD
+  - STONE_SWORD
+  - IRON_SWORD
+  - GOLDEN_SWORD
+  - DIAMOND_SWORD
+  - NETHERITE_SWORD
+
+# List of blocks that can be broken by machete
+breakable-blocks:
+  # Grass and plants
+  - SHORT_GRASS
+  - TALL_GRASS
+  - FERN
+  - LARGE_FERN
+  - DEAD_BUSH
+  - SEAGRASS
+  - TALL_SEAGRASS
+
+  # Flowers
+  - DANDELION
+  - POPPY
+  - BLUE_ORCHID
+  - ALLIUM
+  - AZURE_BLUET
+  - RED_TULIP
+  - ORANGE_TULIP
+  - WHITE_TULIP
+  - PINK_TULIP
+  - OXEYE_DAISY
+  - CORNFLOWER
+  - LILY_OF_THE_VALLEY
+  - WITHER_ROSE
+  - SUNFLOWER
+  - LILAC
+  - ROSE_BUSH
+  - PEONY
+
+  # Leaves
+  - OAK_LEAVES
+  - SPRUCE_LEAVES
+  - BIRCH_LEAVES
+  - JUNGLE_LEAVES
+  - ACACIA_LEAVES
+  - DARK_OAK_LEAVES
+  - AZALEA_LEAVES
+  - FLOWERING_AZALEA_LEAVES
+
+  # Moss
+  - MOSS_CARPET
+  - MOSS_BLOCK
+
+  # Crops
+  - WHEAT
+  - CARROTS
+  - POTATOES
+  - BEETROOTS
+
+  # Other vegetation
+  - SUGAR_CANE
+  - BAMBOO
+  - VINE
+  - GLOW_BERRIES
+  - CAVE_VINES
+  - CAVE_VINES_PLANT

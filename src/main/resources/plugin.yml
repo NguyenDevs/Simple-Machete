@@ -1,0 +1,22 @@
+name: SimpleMachete
+version: 1.0.0
+main: com.NguyenDevs.simpleMachete.SimpleMachete
+api-version: 1.18
+author: NguyenDevs
+description: A simple machete plugin that allows you to clear vegetation with swords
+softdepend: [WorldGuard]
+
+commands:
+  simplemachete:
+    description: Main command for SimpleMachete
+    usage: /simplemachete <reload>
+    aliases: [sm, machete]
+    permission: simplemachete.use
+
+permissions:
+  simplemachete.use:
+    description: Allows using the machete feature
+    default: true
+  simplemachete.admin:
+    description: Allows using admin commands (reload)
+    default: op
