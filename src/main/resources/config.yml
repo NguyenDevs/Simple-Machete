@@ -1,6 +1,6 @@
 # SimpleMachete Configuration File
 # Plugin by NguyenDevs
-
+notify-update: true
 settings:
   # Radius of blocks to break (in blocks)
   radius: 5
