@@ -35,7 +35,7 @@ public class ConfigManager {
 
     private void addDefaultValues() {
         Map<String, Object> defaults = new HashMap<>();
-
+        defaults.put("notify-update", true);
         defaults.put("settings.radius", 5);
         defaults.put("settings.require-sweeping-edge", true);
         defaults.put("settings.cooldown-ticks", 10);
@@ -115,6 +115,8 @@ public class ConfigManager {
             e.printStackTrace();
         }
     }
+
+    public boolean getNotifyUpdate() { return config.getBoolean("notify-update", true);}
 
     public int getRadius() {
         return config.getInt("settings.radius", 3);
