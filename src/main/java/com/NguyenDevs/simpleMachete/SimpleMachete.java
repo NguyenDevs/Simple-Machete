@@ -5,6 +5,7 @@ import com.NguyenDevs.simpleMachete.hooks.WorldGuardHook;
 import com.NguyenDevs.simpleMachete.listeners.SweepListener;
 import com.NguyenDevs.simpleMachete.managers.ConfigManager;
 import com.NguyenDevs.simpleMachete.managers.LanguageManager;
+import com.NguyenDevs.simpleMachete.utils.UpdateChecker;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -14,10 +15,11 @@ public final class SimpleMachete extends JavaPlugin {
     private static SimpleMachete instance;
     private ConfigManager configManager;
     private LanguageManager languageManager;
+    private UpdateChecker updateChecker;
 
     @Override
     public void onLoad() {
-         if (getServer().getPluginManager().getPlugin("WorldGuard") != null) {
+        if (getServer().getPluginManager().getPlugin("WorldGuard") != null) {
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&',
                     "&b[&eSimple&6Machete&b] &eWorldGuard detected! Registering flags..."));
             try {
@@ -71,6 +73,11 @@ public final class SimpleMachete extends JavaPlugin {
 
         // Register commands
         getCommand("simplemachete").setExecutor(new MacheteCommand(this));
+
+        // Initialize and check for updates (Resource ID: 130472)
+        updateChecker = new UpdateChecker(130472, this);
+        updateChecker.checkForUpdate();
+
         Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&b[&eSimple&6Machete&b] &aSimpleMachete plugin enabled successfully!!"));
     }
 
@@ -111,6 +118,10 @@ public final class SimpleMachete extends JavaPlugin {
 
     public LanguageManager getLanguageManager() {
         return languageManager;
+    }
+
+    public UpdateChecker getUpdateChecker() {
+        return updateChecker;
     }
 
     public void reload() {
